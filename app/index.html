@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/8b1c4a3df8.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <div class="container mt-5">
+        <div class="card mt-5">
+            <div class="card-header">
+                <h5 class="text-center">Film project</h5>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-6">
+
+                        <input class="form-control" placeholder="Film Name" id="film-name" type="text">
+                    </div>
+                    <div class="col-6">
+
+                        <input class="form-control" placeholder="Film Director" id="film-director" type="text">
+                    </div>
+                    <div class="col-6 mt-3">
+
+                        <input class="form-control" placeholder="Film link" id="film-link" type="text">
+
+                    </div>
+                    <div class="col-6 mt-3">
+
+                        <input class="form-control" placeholder="Film Poster Link" id="film-poster" type="text">
+                    </div>
+                    <div class="col-12">
+                        <hr>
+                    </div>
+
+                    <div class="col-6 ">
+                        <button class="btn btn-success" onclick="addFilms()">add films</button>
+                    </div>
+                    <div class="col-6 ">
+                        <button class="btn btn-danger float-right" onclick="clearInputs()">Clear Inputs</button>
+                    </div>
+                    <div class="col-12">
+                        <hr>
+                    </div>
+                    <div class="col-12" id="info">
+
+                    </div>
+
+                    <div class="col-12">
+
+
+
+                        <table class="table table-dark">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Film Poster</th>
+                                    <th scope="col">Film Name</th>
+                                    <th scope="col">Film Director</th>
+                                    <th scope="col">Film Links</th>
+                                    <th scope="col">Film Remove</th>
+                                </tr>
+                            </thead>
+                            <tbody id="films-table">
+                                <!-- <tr>
+                                    <th></th>
+                                    <td></td>
+                                    <td>Otto</td>
+                                    <td>@mdo</td>
+                                    <td>@mdo</td>
+                                </tr> -->
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-12">
+                        <hr>
+                    </div>
+                    <div class="col-12">
+                        <button class="btn btn-danger" onclick="ClearAllFilms()">Clear All Films</button>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    <script src="ui.js"></script>
+    <script src="storage.js"></script>
+    <script src="film.js"></script>
+    <script src="index.js"></script>
+
+</body>
+
+</html>
