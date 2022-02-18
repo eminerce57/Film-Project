@@ -6,7 +6,7 @@ class UI {
         row.innerHTML += `
          <tr>
         <th></th>
-        <td><img class="img-fluid" src="${film.img}"></td>
+        <td><img class="img-thumbnail" src="${film.img}"></td>
         <td>${film.title}</td>
         <td>${film.director}</td>
         <td>${film.link}</td>
@@ -23,7 +23,7 @@ class UI {
             row.innerHTML += `
             <tr>
             <th></th>
-            <td><img class="img-fluid" src="${film.img}"></td>
+            <td><img class="img-thumbnail" src="${film.img}"></td>
             <td>${film.title}</td>
             <td>${film.director}</td>
             <td>${film.link}</td>
