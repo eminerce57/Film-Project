@@ -9,12 +9,7 @@ const cardbody = document.querySelectorAll(".card-body")[0];
 eventListener()
 
 function eventListener() {
-    console.log(cardbody)
-
     cardbody.addEventListener("click", deleteFilm);
-
-
-
 }
 
 function addFilms() {
@@ -32,6 +27,7 @@ function addFilms() {
         const newFilm = new Film(title, director, link, img)
         UI.AddFilmUI(newFilm)
         Storage.addfilmStorage(newFilm)
+        info("add movie successful", "success")
     }
 
 
@@ -46,7 +42,7 @@ function ClearAllFilms() {
     localStorage.removeItem("films")
     let row = document.getElementById("films-table")
     row.innerHTML = ""
-    info("ALL films cleared", "success")
+    info("ALL movies cleared", "success")
 }
 
 function clearInputs() {
