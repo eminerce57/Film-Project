@@ -7,7 +7,7 @@ const cardbody = document.querySelectorAll(".card-body")[0];
 
 
 eventListener()
-
+    //event listener
 function eventListener() {
     cardbody.addEventListener("click", deleteFilm);
 }
@@ -17,20 +17,16 @@ function addFilms() {
     const director = FilmDirector.value
     const link = FilmLink.value
     const img = FilmPoster.value
-
-
+        //Value check
     if (!title || !director || !link || !img) {
         info("fill in all fields", "danger")
-
     } else {
-
+        // CREATE FİLM OBJECT
         const newFilm = new Film(title, director, link, img)
         UI.AddFilmUI(newFilm)
         Storage.addfilmStorage(newFilm)
         info("add movie successful", "success")
     }
-
-
     FilmName.value = ""
     FilmDirector.value = ""
     FilmLink.value = ""
@@ -38,26 +34,23 @@ function addFilms() {
 }
 
 function ClearAllFilms() {
-
     localStorage.removeItem("films")
     let row = document.getElementById("films-table")
     row.innerHTML = ""
     info("ALL movies cleared", "success")
 }
 
+//clear ınputs function
 function clearInputs() {
     FilmName.value = ""
     FilmDirector.value = ""
     FilmLink.value = ""
     FilmPoster.value = ""
     info("all inputs cleared", "success")
-
     Storage.allFilmsToUI()
-
-
 }
 
-
+// Display message function
 function info(massage, type) {
     let infoDiv = document.getElementById("info")
 
@@ -72,9 +65,8 @@ function info(massage, type) {
 
 
 
-
+//film delete 
 function deleteFilm(e) {
-
     if (e.target.id === "delete-film") {
         UI.deleteFilmFromUI(e.target)
         Storage.deleteFilmFromStorage(e.target.parentElement.previousElementSibling.previousElementSibling.previousElementSibling.textContent)

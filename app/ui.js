@@ -1,12 +1,7 @@
 class UI {
+    constructor() {}
 
-
-    constructor() {
-
-
-    }
-
-    static AddFilmUI(film) {
+    static AddFilmUI(film) { // film add to html
         let row = document.getElementById("films-table")
         row.innerHTML += `
          <tr>
@@ -19,17 +14,12 @@ class UI {
         </tr> 
     
     `
-
     }
 
-    static allFilmsToUI() {
-
-
+    static allFilmsToUI() { // film add to html   from storage
         let films = Storage.getFilmsFromStorage()
         let row = document.getElementById("films-table")
-
         films.forEach(function(film) {
-
             row.innerHTML += `
             <tr>
             <th></th>
@@ -39,18 +29,13 @@ class UI {
             <td>${film.link}</td>
             <td><a href="#" id = "delete-film" class = "btn btn-danger">Remove</a></td>
             </tr> 
-       
-       `
+        `
         });
-
     }
 
-
+    //deleted film but just ui
     static deleteFilmFromUI(target) {
         target.parentElement.parentElement.remove();
-
-
-
     }
 
 

@@ -1,3 +1,4 @@
+// create film object
 class Film {
     constructor(title, director, link, img) {
         this.title = title;
