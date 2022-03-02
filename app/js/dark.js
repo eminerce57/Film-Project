@@ -1,10 +1,16 @@
 const Switch = document.getElementById("switch")
 const darkBody = document.querySelectorAll(".dark-mode,.form-control")
-Switch.addEventListener("change", darkmode )
-darkmode
-function darkmode(e) {
-  let dark =e.currentTarget.checked
-  darkStorage(dark)
+Switch.addEventListener("change", function(e){
+
+    let theme =e.currentTarget.checked
+    darkmode(theme)
+} )
+darkmode(JSON.parse(localStorage.getItem("dark-theme"))) 
+function darkmode(theme) {
+localStorage.setItem("dark-theme",theme)
+
+
+ 
     if (theme === true) {
         darkBody.forEach(function(body) {
             console.log(body)
@@ -15,10 +21,5 @@ function darkmode(e) {
             body.classList.remove("dark")
         });
     }
-}
-function darkStorage(dark){
-    let theme;
-    localStorage.setItem("dark-theme",dark)
-    theme = JSON.parse(localStorage.getItem("dark-theme"))
-    return !theme
+    Switch.checked =theme;
 }
