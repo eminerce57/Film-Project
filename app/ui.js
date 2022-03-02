@@ -9,8 +9,8 @@ class UI {
         <td><img class="img-thumbnail" src="${film.img}"></td>
         <td>${film.title}</td>
         <td>${film.director}</td>
-        <td>${film.link}</td>
-        <td><a href="#" id = "delete-film" class = "btn btn-danger">Remove</a></td>
+        <td><a target="_blank" href="${film.link}">${film.link}</a></td>
+        <td><a rel="noopener noreferrer" href="#" id = "delete-film" class = "btn btn-danger">Remove</a></td>
         </tr> 
     
     `
@@ -19,6 +19,7 @@ class UI {
     static allFilmsToUI() { // film add to html   from storage
         let films = Storage.getFilmsFromStorage()
         let row = document.getElementById("films-table")
+        
         films.forEach(function(film) {
             row.innerHTML += `
             <tr>
@@ -26,8 +27,8 @@ class UI {
             <td><img class="img-thumbnail" src="${film.img}"></td>
             <td>${film.title}</td>
             <td>${film.director}</td>
-            <td>${film.link}</td>
-            <td><a href="#" id = "delete-film" class = "btn btn-danger">Remove</a></td>
+            <td><a target="_blank" href="${film.link}">${film.link}</a></td>
+            <td><a rel="noopener noreferrer" href="#" id = "delete-film" class = "btn btn-danger">Remove</a></td>
             </tr> 
         `
         });

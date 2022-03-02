@@ -1,5 +1,5 @@
 const Switch = document.getElementById("switch")
-const darkBody = document.querySelectorAll(".dark-mode")
+const darkBody = document.querySelectorAll(".dark-mode,.form-control")
 Switch.addEventListener("change", darkmode)
 
 function darkmode(e) {
